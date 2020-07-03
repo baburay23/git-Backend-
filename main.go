@@ -13,10 +13,9 @@ func main() {
 
 func setupServer() *gin.Engine {
 	r := gin.Default()
+	r.GET("/", handlers.Homepage)
 	r.GET("/education", handlers.GetEducation)
 	r.GET("/charity", handlers.GetCharity)
 	r.GET("/cooking", handlers.GetCooking)
 	return r
 }
-
-

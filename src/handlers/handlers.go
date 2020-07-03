@@ -42,81 +42,16 @@ type Cooking struct {
 
 }
 
-/* 
-  func Stock(){
-
-	education := []struct {
-	Activity string `json: "activity"`
-	Accessibility int `json: "accessibility"`
-	Type string `json: "type"`
-	Participants int `json: "participants"`
-	Price int `json: "price"`
-	Key int `json: "key"`
+func Homepage ( c *gin.Context){
+	c.JSON(http.StatusOK, gin.H {
 		
-	}{
-		{ Activity: "Learn Rust",
-		Accessibility: 1,
-		Type: "Education",
-		Participants: 1, 
-		Price: 1, 
-		Key: 1,},
-		{ Activity: "Learn Elm",
-		Accessibility: 1,
-		Type: "Education",
-		Participants: 1, 
-		Price: 1, 
-		Key: 1,},
-		{ Activity: "Learn ",
-		Accessibility: 1,
-		Type: "Education",
-		Participants: 1, 
-		Price: 1, 
-	    Key: 1,},
-	}
-		fmt.Println(education)
-
-
-} */
-	
-/* func GetEducation (c *gin.Context) {
-	education := []struct {
-		Activity string `json: "activity"`
-		Accessibility int `json: "accessibility"`
-		Type string `json: "type"`
-		Participants int `json: "participants"`
-		Price int `json: "price"`
-		Key int `json: "key"`}{
-			{ Activity: "Learn Rust",
-			Accessibility: 1,
-			Type: "Education",
-			Participants: 1, 
-			Price: 1, 
-			Key: 1,},
-			{ Activity: "Learn Elm",
-			Accessibility: 1,
-			Type: "Education",
-			Participants: 1, 
-			Price: 1, 
-			Key: 1,},
-			{ Activity: "Learn ",
-			Accessibility: 1,
-			Type: "Education",
-			Participants: 1, 
-			Price: 1, 
-			Key: 1,},
-		}
-			//fmt.Println(education)
-		c.JSON(http.StatusOK, gin.H {
-			"Bored API" : education,
-			
-		 })
-		} */
-			
-
-
+		"Bored API": "Homepage",
+		  
+	})
+}
   func GetEducation( c *gin.Context) {
 	e := []Education{
-		Education{ Activity: "Learn Rust",
+		{ Activity: "Learn Rust",
  		Accessibility: 1,
  		Type: "Education",
  		Participants: 1, 
@@ -133,10 +68,11 @@ type Cooking struct {
 		Type: "Education",
 		Participants: 1, 
 		Price: 1, 
-	    Key: 1,},}
+		Key: 1,},}
      c.JSON(http.StatusOK, gin.H {
- 	   "Bored API" : e,
-	
+		
+ 	"Bored API" :e[0:1],
+ 	  
  })
  }  
 
@@ -162,33 +98,12 @@ func GetCharity( c *gin.Context) {
 	 Price: 1,
 	  Key: 1,}
 	c.JSON(http.StatusOK, gin.H {
+	
 	 "Bored API" : h.Activity,
 		
  })
 } 
 
-/*   func GetEducation( c *gin.Context) {
-	   e := []Education {
-		Education{Activity: "Learn Rust",
-		Accessibility: 1,
-		Type: "Education",
-		Participants: 1, 
-		Price: 1, 
-		Key: 1,},
-		{Activity: "Learn Elm", 
-		Accessibility: 1, 
-		Type: "Education",
-		Participants: 1, 
-		Price: 1, 
-		Key: 1,},
-	   
-		//E := education
-	c.JSON( http.StatusOK, gin.H {
-	  "Bored API" : e.Activity,
-	 }),
-	
- }  
-} */
 
 
 
