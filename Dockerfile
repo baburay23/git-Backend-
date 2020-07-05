@@ -1,13 +1,16 @@
-FROM nginx:latest
-
-WORKDIR /usr/share/nginx/html
-
-COPY . .
 
 FROM golang:alpine
 
-WORKDIR /gobackend
+WORKDIR /gobackend 
 
-RUN go build -o bin/main .
+COPY  go.mod .
 
-CMD ["make", "dev"]
+COPY go.sum .
+
+RUN go mod download
+
+COPY . .
+
+RUN go build -o main .
+
+CMD ["./main"]
