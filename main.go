@@ -2,6 +2,8 @@ package main
 
 import (
 	"github.com/baburay23/src/handlers"
+	"github.com/gin-contrib/cors"
+	_ "github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -13,6 +15,7 @@ func main() {
 
 func setupServer() *gin.Engine {
 	r := gin.Default()
+	r.Use(cors.Default())
 	r.GET("/", handlers.Homepage)
 	r.GET("/education", handlers.GetEducation)
 	r.GET("/charity", handlers.GetCharity)
