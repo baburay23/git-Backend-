@@ -20,5 +20,7 @@ func setupServer() *gin.Engine {
 	r.GET("/education", handlers.GetEducation)
 	r.GET("/charity", handlers.GetCharity)
 	r.GET("/cooking", handlers.GetCooking)
+	r.GET("/relaxation", handlers.GetRelaxation)
+	r.GET("/music", handlers.GetMusic)
 	return r
 }
