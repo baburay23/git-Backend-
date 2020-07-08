@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/baburay23/src/handlers"
 	"github.com/gin-contrib/cors"
-	_ "github.com/gin-contrib/cors"
+
 	"github.com/gin-gonic/gin"
 )
 
